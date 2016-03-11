@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Angular Reusable Directive</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+  <script src="https://code.angularjs.org/1.4.1/angular.js"></script>
+  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-resource.js"></script>
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="scripts/app.js"></script>
+</head>
+
+<body ng-controller="AppCtrl as app">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Name</th>
+              <th>Initial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="employee in employees">
+              <td>{{employee.id}}</td>
+              <td><full-name first-name="{{employee.firstName}}" last-name="{{employee.lastName}}"></full-name></td>
+              <td><initials name="{{employee.firstName + ' ' + employee.lastName}}"></initials></td>
+            </tr>
+          </tbody>
+        </table>
+        <full-name first-name="Jay" last-name="Conaco"></full-name>
+        <initials name="Jay Conaco"></initials>
+        <hr/>
+        <full-name first-name="Christopher" last-name="Rosales"></full-name>
+        <initials name="Christopher Rosales"></initials>
+        <hr/>
+        <full-name first-name="James" last-name="Fundales"></full-name>
+        <initials name="James Fundales"></initials>
+        <hr/>
+        <full-name first-name="Red" last-name="Camara"></full-name>
+        <initials name="Red Camara"></initials>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
